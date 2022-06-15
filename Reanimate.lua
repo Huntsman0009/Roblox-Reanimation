@@ -1,16 +1,4 @@
--- Options:
-_G.Velocity = Vector3.new(35, 0, 0)
 
---- Version --------------------------
-_G.AlternateVersion = "v1"
---------------------------------------
-
---- Version Info ---------------------
---[[
-    v1: Better net, no anti-fling/fling
-    v2: Worse net, fling
---]]
---------------------------------------
 
 -- Generic Variables
 local plr = game.Players.LocalPlayer
