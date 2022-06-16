@@ -129,13 +129,9 @@ if _G.AlternateVersion == "v1" then
         for i, v in pairs(plrParts) do
             if v:IsA("BasePart") then
                 v.Velocity = _G.Velocity
-                sethiddenproperty(game.Players.LocalPlayer,"MaximumSimulationRadius",math.huge)
-                sethiddenproperty(game.Players.LocalPlayer,"SimulationRadius",999999999)
             elseif v:IsA("Accessory") then
                 pcall(function()
                     v.Handle.Velocity = _G.Velocity
-                    sethiddenproperty(game.Players.LocalPlayer,"MaximumSimulationRadius",math.huge)
-                    sethiddenproperty(game.Players.LocalPlayer,"SimulationRadius",999999999)
                 end)
             end
         end
@@ -150,6 +146,5 @@ if _G.AlternateVersion == "v1" then
     end)
 
     -- Camera
-    --local findClass = game.Workspace:FindFirstChildOfClass
-    --findClass("Camera").CameraSubject = Reanim.Humanoid
+    workspace:FindFirstChildOfClass("Camera").CameraSubject = Reanim.Humanoid
 end
