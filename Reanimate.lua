@@ -10,8 +10,6 @@ local HumanoidRootPart = plr.Character.HumanoidRootPart
 if _G.AlternateVersion == "v1" then
     print("test1")
     -- Align Function
-    sethiddenproperty(game.Players.LocalPlayer,"MaximumSimulationRadius",math.huge)
-    sethiddenproperty(game.Players.LocalPlayer,"SimulationRadius",999999999)
     local function align(P0, P1, Position, Rotation)
         local AlignPosition = Instance.new("AlignPosition", P0)
         AlignPosition.RigidityEnabled = true
@@ -131,9 +129,13 @@ if _G.AlternateVersion == "v1" then
         for i, v in pairs(plrParts) do
             if v:IsA("BasePart") then
                 v.Velocity = _G.Velocity
+                sethiddenproperty(game.Players.LocalPlayer,"MaximumSimulationRadius",math.huge)
+                sethiddenproperty(game.Players.LocalPlayer,"SimulationRadius",999999999)
             elseif v:IsA("Accessory") then
                 pcall(function()
                     v.Handle.Velocity = _G.Velocity
+                    sethiddenproperty(game.Players.LocalPlayer,"MaximumSimulationRadius",math.huge)
+                    sethiddenproperty(game.Players.LocalPlayer,"SimulationRadius",999999999)
                 end)
             end
         end
